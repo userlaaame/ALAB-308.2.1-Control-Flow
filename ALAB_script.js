@@ -14,7 +14,7 @@
 
 console.log("--- Part 1: Growing Pains ---");
 
-const PI = 3.1415;
+const PI = 3.1415;  
 const radius = 5;
 //minimum space of a single plant
 const plantSpaceReq = 0.8;
@@ -23,6 +23,7 @@ const area = PI * radius * radius; //78.5375
 //starting number of plants
 let plantcount = 20;
 const capacity = area / plantSpaceReq;
+
 
 // The area is starting with 20 plants.
 // The plants double in number every week.
@@ -85,7 +86,7 @@ if (week2count >= 0.80) {
 
 if (week3count >= 0.80) {
     console.log("Week 3: Prune Garden");
-} else if (week2count >= 0.50) {
+} else if (week3count >= 0.50) {
     console.log("Week 3: Monitor Garden");
 } else {
     console.log("Week 3: Plant More");
@@ -107,3 +108,20 @@ console.log(week3,"plants");
 // } 
 
 console.log("================Part 2: Thinking Bigger======================")
+
+// Using the logic you have already created, determine:
+// The amount of additional space that would be required if the 
+// scientists were to start with 100 plants, and did not prune them
+// for 10 weeks.
+// If the space remained circular, what would be the radius of this
+// expanded garden?
+    let startPlants = 100;
+    let week10 = startPlants * Math.pow(2, 10);
+    let week10space = week10 * plantSpaceReq;
+    let requiredRadius = Math.sqrt(week10space / PI);
+console.log("======Week 10 Unpruned Count======");
+console.log(week10, "plants");
+console.log("Required area:", week10space, "sq meters");
+console.log("Required radius:", requiredRadius.toFixed(2), "meters");
+
+
